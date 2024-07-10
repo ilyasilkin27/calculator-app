@@ -66,39 +66,41 @@ const Calculator = () => {
   };
 
   return (
-    <div className="calculator">
-      <Display value={displayValue} history={history} />
-      <div className="divider"></div>
-      <div className="calculator-keypad">
-        <div className="function-keys">
-          <Button onClick={clearDisplay}>C</Button>
-          <Button onClick={toggleSign}>√</Button>
-          <Button onClick={inputPercent}>%</Button>
-          <Button onClick={() => performOperation('/')}>/</Button>
-        </div>
-        <div className="digit-keys">
-          {[7, 8, 9].map((digit) => (
-            <Button key={digit} onClick={() => inputDigit(digit)}>
-              {digit}
-            </Button>
-          ))}
-          <Button onClick={() => performOperation('*')}>×</Button>
-          {[4, 5, 6].map((digit) => (
-            <Button key={digit} onClick={() => inputDigit(digit)}>
-              {digit}
-            </Button>
-          ))}
-          <Button onClick={() => performOperation('-')}>-</Button>
-          {[1, 2, 3].map((digit) => (
-            <Button key={digit} onClick={() => inputDigit(digit)}>
-              {digit}
-            </Button>
-          ))}
-          <Button onClick={() => performOperation('+')}>+</Button>
-          <Button className="button-zero" onClick={() => inputDigit(0)}>00</Button>
-          <Button onClick={() => inputDigit(0)}>0</Button>
-          <Button onClick={inputDot}>,</Button>
-          <Button onClick={() => performOperation('=')}>=</Button>
+    <div className="calculator-wrapper">
+      <div className="calculator">
+        <Display value={displayValue} history={history} />
+        <div className="divider"></div>
+        <div className="calculator-keypad">
+          <div className="function-keys">
+            <Button onClick={clearDisplay}>C</Button>
+            <Button onClick={toggleSign}>√</Button>
+            <Button onClick={inputPercent}>%</Button>
+            <Button onClick={() => performOperation('/')}>/</Button>
+          </div>
+          <div className="digit-keys">
+            {[7, 8, 9].map((digit) => (
+              <Button key={digit} onClick={() => inputDigit(digit)}>
+                {digit}
+              </Button>
+            ))}
+            <Button onClick={() => performOperation('*')}>×</Button>
+            {[4, 5, 6].map((digit) => (
+              <Button key={digit} onClick={() => inputDigit(digit)}>
+                {digit}
+              </Button>
+            ))}
+            <Button onClick={() => performOperation('-')}>-</Button>
+            {[1, 2, 3].map((digit) => (
+              <Button key={digit} onClick={() => inputDigit(digit)}>
+                {digit}
+              </Button>
+            ))}
+            <Button onClick={() => performOperation('+')}>+</Button>
+            <Button className="button-zero" onClick={() => inputDigit(0)}>00</Button>
+            <Button onClick={() => inputDigit(0)}>0</Button>
+            <Button onClick={inputDot}>,</Button>
+            <Button onClick={() => performOperation('=')}>=</Button>
+          </div>
         </div>
       </div>
     </div>
