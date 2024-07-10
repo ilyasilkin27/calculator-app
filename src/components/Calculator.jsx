@@ -68,6 +68,7 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <Display value={displayValue} history={history} />
+      <div className="divider"></div>
       <div className="calculator-keypad">
         <div className="function-keys">
           <Button onClick={clearDisplay}>C</Button>
