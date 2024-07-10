@@ -26,3 +26,5 @@ npm start
 ```
 
 Приложение будет запущено и доступно по адресу `http://localhost:3000`.
+
+[Live](https://calculator-app-seven-nu.vercel.app/)
