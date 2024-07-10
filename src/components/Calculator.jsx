@@ -5,6 +5,7 @@ import '../calculator.css';
 
 const Calculator = () => {
   const [displayValue, setDisplayValue] = useState('0');
+  const [history, setHistory] = useState('');
   const [operator, setOperator] = useState(null);
   const [waitingForOperand, setWaitingForOperand] = useState(false);
   const [previousValue, setPreviousValue] = useState(null);
@@ -26,6 +27,7 @@ const Calculator = () => {
 
   const clearDisplay = () => {
     setDisplayValue('0');
+    setHistory('');
   };
 
   const toggleSign = () => {
@@ -48,6 +50,7 @@ const Calculator = () => {
 
       setDisplayValue(String(newValue));
       setPreviousValue(newValue);
+      setHistory(`${currentValue} ${operator} ${inputValue} = ${newValue}`);
     }
 
     setWaitingForOperand(true);
@@ -64,7 +67,7 @@ const Calculator = () => {
 
   return (
     <div className="calculator">
-      <Display value={displayValue} />
+      <Display value={displayValue} history={history} />
       <div className="calculator-keypad">
         <div className="function-keys">
           <Button onClick={clearDisplay}>C</Button>
